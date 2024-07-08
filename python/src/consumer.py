@@ -15,8 +15,8 @@ def process_data(message):
 
     col2.metric("Temperature (°C)", data["temp_c"])
     col1.metric("Condition", data["condition"])
-
-    set.success("Last updated:")
+    last_updated = data["last_updated"]
+    st.success(f"Last updated: {last_updated}")
 
 def consume_message():
     consumer = KafkaConsumer(
@@ -31,5 +31,4 @@ def consume_message():
 
 if __name__ == '__main__':
     consumer_dashboard()
-
     consume_message()

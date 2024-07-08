@@ -8,15 +8,11 @@ from dashboards import producer_dashboard
 def producer(location):
     producer = KafkaProducer(bootstrap_servers=[KAFKA_BROKER])
     data = fetch_lat_long(location)
-
     if data:
         res = json.dumps(data).encode("utf-8")
-        print(res, "avant")
         producer.send(KAFKA_TOPIC, res)
-        print(res, "apres")
         return res
-
-    return False
+    return None
 
 if __name__ == "__main__":
     producer_dashboard()
@@ -25,6 +21,7 @@ if __name__ == "__main__":
     if action:
         message = producer(location)
         if message:
+            print(message)
             st.success("Weather data produced to Kafka.")
         else:
             st.error("Error producing data to Kafka.")
