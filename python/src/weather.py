@@ -20,9 +20,9 @@ def get_weather(api_key, latitude, longitude):
     else:
         print(f"Erreur {response.status_code} : Impossible de récupérer les données météo")
 
-# Exemple d'utilisation
-api_key = "f0c8bcac730349b08c584655240807"  # Remplacez par votre clé API
-latitude = 48.8566  # Exemple : latitude de Paris
-longitude = 2.3522  # Exemple : longitude de Paris
+
+api_key = "f0c8bcac730349b08c584655240807" 
+latitude = 48.8566 
+longitude = 2.3522 
 
 get_weather(api_key, latitude, longitude)
