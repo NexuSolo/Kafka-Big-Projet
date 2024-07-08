@@ -17,34 +17,24 @@ Le projet est structuré comme suit :
     - `geocoding.py` : Utilitaire pour convertir les emplacements en coordonnées géographiques.
     - `producer.py` : Script du producteur qui envoie les données météorologiques au topic Kafka.
     - `weather.py` : Utilitaire pour récupérer les données météorologiques.
-  - `.env` : Fichier pour les variables d'environnement (exclu par `.gitignore`).
-- `requierement.txt` : Fichier contenant les dépendances Python nécessaires.
+    - `.env` : Fichier pour les variables d'environnement (exclu par `.gitignore`).
+    - `requierement.txt` : Fichier contenant les dépendances Python nécessaires.
+
+
 
 ## Prérequis
 
 - Docker et Docker Compose
-- Python 3.8 ou supérieur
 - Se créer un compte sur WeatherApi (https://www.weatherapi.com) pour générer une clé
 
 ## Installation
 
 1. Clonez le dépôt et s'y déplacer :
 ```sh
-git clone https://exemple.com/Kafka-Big-Projet.git
+git clone https://github.com/NexuSolo/Kafka-Big-Projet.git
 cd Kafka-Big-Projet
 ```
-
-2. Lancez les services Kafka et Zookeeper avec Docker Compose :
-```sh
-docker-compose up -d
-```
-
-3. Installez les dépendances Python :
-```sh
-pip install -r requierement.txt
-```
-
-4. Remplir le .env notamment avec la clé de WeatherAPI :
+2. Remplir le .env notamment avec la clé de WeatherAPI :
 ```sh
 KAFKA_BROKER = "localhost:9092"
 KAFKA_TOPIC = "weather_data"
@@ -52,21 +42,22 @@ KAFKA_GROUP_ID = "weather_consumer_group"
 WEATHER_API_API_Key = votre clé
 ```
 
+3. Lancez les services Kafka et Zookeeper avec Docker Compose :
+```sh
+docker-compose up -d
+```
 
 ## Utilisation
 
-### Démarrer le producteur
+### Le producteur
 
-Exécutez le script du producteur pour commencer à envoyer des données météorologiques :
-```sh
-python python/src/producer.py
-```
 Consultable sur : http://localhost:8502
 
-### Démarrer le consommateur
+### Le consommateur
 
-Exécutez le script du consommateur pour lire les données du topic Kafka et afficher le tableau de bord :
-```sh
-python python/src/consumer.py
-```
 Consultable sur : http://localhost:8501
+
+
+## Affichage
+
+L'affichage des données dans ce projet est géré par **Streamlit**, un framework open-source qui permet de créer rapidement des applications web pour la visualisation de données.
