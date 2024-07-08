@@ -1,4 +1,4 @@
-# Kafka-Big-Projet
+# Projet Kafka
 
 ## Description
 
