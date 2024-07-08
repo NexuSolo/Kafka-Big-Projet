@@ -13,7 +13,7 @@ Cette application affiche la météo de Paris toutes les 15 minutes, elle peut �
 
 Le projet est structuré comme suit :
 
-- `docker-compose.yml` : Contient la configuration pour démarrer les services Kafka et Zookeeper.
+- `docker-compose.yml` : Contient la configuration pour démarrer les services Kafka, Zookeeper et Python
 - `python/` : Contient le code source de l'application en Python.
   - `src/` : Dossier contenant les scripts Python.
     - `consumer.py` : Script du consommateur qui lit les données du topic Kafka.
