@@ -6,6 +6,7 @@ def fetch_lat_long(address: str):
         "q": address,
         "autocomplete": 1,
         "limit": 1,
+        "type": "municipality"
     }
 
     url = "https://api-adresse.data.gouv.fr/search"
@@ -17,10 +18,5 @@ def fetch_lat_long(address: str):
     
     latitude = data["features"][0]["geometry"]["coordinates"][1]
     longitude = data["features"][0]["geometry"]["coordinates"][0]
-    get_weather(latitude, longitude)
 
-    result = {
-        "lat": latitude,
-        "long": longitude,
-    }
-    return result
+    return get_weather(latitude, longitude)

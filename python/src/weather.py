@@ -19,8 +19,12 @@ def get_weather(latitude, longitude):
         temp_c = weather_data['current']['temp_c']
         condition = weather_data['current']['condition']['text']
         
-        print(f"Météo à {location}, {region}, {country} :")
-        print(f"Température: {temp_c}°C")
-        print(f"Condition: {condition}")
+        return {
+            "location": location,
+            "region": region,
+            "country": country,
+            "temp_c": temp_c,
+            "condition": condition
+        }
     else:
         print(f"Erreur {response.status_code} : Impossible de récupérer les données météo")
