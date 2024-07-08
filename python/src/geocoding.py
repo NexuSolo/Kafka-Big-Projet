@@ -19,6 +19,3 @@ def fetch_lat_long(address: str):
         "long": data["features"][0]["geometry"]["coordinates"][0],
     }
     return result
-
-
-print(fetch_lat_long("15 rue de Clignancourt, Paris"))
