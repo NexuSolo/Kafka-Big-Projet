@@ -1,5 +1,9 @@
 # Projet Kafka
 
+- Nicolas THEAU
+- Sebastien ZHOU
+- Yanis ROZIER
+
 ## Description
 
 Ce projet est une application de streaming de données météorologiques utilisant Apache Kafka. Il comprend un producteur qui envoie des données météorologiques pour un emplacement spécifique à un topic Kafka, et un consommateur qui lit ces données et les affiche sur un tableau de bord.
