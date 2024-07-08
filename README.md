@@ -7,6 +7,7 @@
 ## Description
 
 Ce projet est une application de streaming de données météorologiques utilisant Apache Kafka. Il comprend un producteur qui envoie des données météorologiques pour un emplacement spécifique à un topic Kafka, et un consommateur qui lit ces données et les affiche sur un tableau de bord.
+Cette application affiche la météo de Paris toutes les 15 minutes, elle peut également afficher la météo d'une autre ville française au choix en écrivant dans la zone de texte du `Producteur`.
 
 ## Architecture
 
@@ -41,10 +42,10 @@ cd Kafka-Big-Projet
 ```
 2. Remplir le .env notamment avec la clé de WeatherAPI :
 ```sh
-KAFKA_BROKER = "localhost:9092"
+KAFKA_BROKER = "kafka:29092"
 KAFKA_TOPIC = "weather_data"
 KAFKA_GROUP_ID = "weather_consumer_group"
-WEATHER_API_API_Key = votre clé
+WEATHER_API_API_Key = <votre clé>
 ```
 
 3. Lancez les services Kafka, Zookeeper et Python avec Docker Compose :
