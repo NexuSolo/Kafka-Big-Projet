@@ -1,4 +1,5 @@
 import requests
+from weather import get_weather
 
 def fetch_lat_long(address: str):
     params = {
@@ -14,8 +15,12 @@ def fetch_lat_long(address: str):
     if data == {}:
         return False
     
+    latitude = data["features"][0]["geometry"]["coordinates"][1]
+    longitude = data["features"][0]["geometry"]["coordinates"][0]
+    get_weather(latitude, longitude)
+
     result = {
-        "lat": data["features"][0]["geometry"]["coordinates"][1],
-        "long": data["features"][0]["geometry"]["coordinates"][0],
+        "lat": latitude,
+        "long": longitude,
     }
     return result

@@ -1,6 +1,11 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-def get_weather(api_key, latitude, longitude):
+load_dotenv()
+
+def get_weather(latitude, longitude):
+    api_key = os.getenv('WEATHER_API_API_Key')
     url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={latitude},{longitude}"
     
     response = requests.get(url)
@@ -19,10 +24,3 @@ def get_weather(api_key, latitude, longitude):
         print(f"Condition: {condition}")
     else:
         print(f"Erreur {response.status_code} : Impossible de récupérer les données météo")
-
-
-api_key = "f0c8bcac730349b08c584655240807" 
-latitude = 48.8566 
-longitude = 2.3522 
-
-get_weather(api_key, latitude, longitude)
