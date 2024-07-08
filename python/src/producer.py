@@ -2,6 +2,7 @@ import json
 from kafka import KafkaProducer
 from environment import KAFKA_BROKER, KAFKA_TOPIC
 from geocoding import fetch_lat_long
+from dashboards import producer_dashboard
 
 def producer(localisation):
     producer = KafkaProducer(bootstrap_servers=[KAFKA_BROKER])
@@ -16,4 +17,5 @@ def producer(localisation):
     return None
 
 if __name__ == "__main__":
-    pass
+    producer_dashboard()
+    
