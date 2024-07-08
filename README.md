@@ -21,6 +21,7 @@ Le projet est structuré comme suit :
     - `geocoding.py` : Utilitaire pour convertir les emplacements en coordonnées géographiques.
     - `producer.py` : Script du producteur qui envoie les données météorologiques au topic Kafka.
     - `weather.py` : Utilitaire pour récupérer les données météorologiques.
+    - `Dockerfile` : Contient les instructions pour construire l'image Docker de l'application, incluant l'environnement d'exécution et les dépendances nécessaires.
     - `.env` : Fichier pour les variables d'environnement (exclu par `.gitignore`).
     - `requierement.txt` : Fichier contenant les dépendances Python nécessaires.
 
@@ -46,18 +47,18 @@ KAFKA_GROUP_ID = "weather_consumer_group"
 WEATHER_API_API_Key = votre clé
 ```
 
-3. Lancez les services Kafka et Zookeeper avec Docker Compose :
+3. Lancez les services Kafka, Zookeeper et Python avec Docker Compose :
 ```sh
 docker-compose up -d
 ```
 
 ## Utilisation
 
-### Le producteur
+### Le producer
 
 Consultable sur : http://localhost:8502
 
-### Le consommateur
+### Le consumer
 
 Consultable sur : http://localhost:8501
 
